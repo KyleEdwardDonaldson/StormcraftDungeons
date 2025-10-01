@@ -7,6 +7,7 @@ import dev.ked.stormcraft.dungeons.data.DataManager;
 import dev.ked.stormcraft.dungeons.integration.EssenceIntegration;
 import dev.ked.stormcraft.dungeons.integration.MythicDungeonsIntegration;
 import dev.ked.stormcraft.dungeons.integration.StormcraftIntegration;
+import dev.ked.stormcraft.dungeons.listener.DungeonEventListener;
 import dev.ked.stormcraft.dungeons.listener.PortalInteractListener;
 import dev.ked.stormcraft.dungeons.listener.StormEventListener;
 import dev.ked.stormcraft.dungeons.portal.PortalManager;
@@ -181,6 +182,8 @@ public class StormcraftDungeonsPlugin extends JavaPlugin {
             new StormEventListener(this, portalManager), this);
         getServer().getPluginManager().registerEvents(
             new PortalInteractListener(this, portalManager, requirementChecker, mythicDungeonsIntegration), this);
+        getServer().getPluginManager().registerEvents(
+            new DungeonEventListener(this, rewardManager), this);
     }
 
     private void registerCommands() {
