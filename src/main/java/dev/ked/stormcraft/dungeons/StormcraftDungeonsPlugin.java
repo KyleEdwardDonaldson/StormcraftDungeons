@@ -40,11 +40,11 @@ public class StormcraftDungeonsPlugin extends JavaPlugin {
             return;
         }
 
-        // Setup MythicDungeons integration (required)
+        // Setup MythicDungeons integration (optional - runs in limited mode without it)
         if (!setupMythicDungeons()) {
-            getLogger().severe("MythicDungeons plugin not found! Disabling plugin.");
-            getServer().getPluginManager().disablePlugin(this);
-            return;
+            getLogger().warning("MythicDungeons plugin not found! Running in limited mode.");
+            getLogger().warning("Portals will spawn but players cannot enter dungeons.");
+            getLogger().warning("Install MythicDungeons to enable full functionality.");
         }
 
         // Load configuration

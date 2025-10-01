@@ -7,9 +7,9 @@ description: Bridge plugin connecting Stormcraft storms with MythicDungeons inst
 
 depend:
   - Stormcraft
-  - MythicDungeons
 
 softdepend:
+  - MythicDungeons
   - Stormcraft-Essence
   - Vault
 

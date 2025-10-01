@@ -85,6 +85,13 @@ public class PortalInteractListener implements Listener {
     }
 
     private void openDungeonGUI(Player player, Portal portal) {
+        // Check if MythicDungeons is available
+        if (mythicDungeonsIntegration == null || !mythicDungeonsIntegration.isEnabled()) {
+            player.sendMessage("§c✗ Dungeon system is currently unavailable!");
+            player.sendMessage("§7MythicDungeons is not installed. Contact an administrator.");
+            return;
+        }
+
         // Open MythicDungeons interface
         mythicDungeonsIntegration.openDungeonGUI(player, portal.getDungeonName());
         player.sendMessage("§a✓ Entering " + portal.getDungeonName() + "...");
