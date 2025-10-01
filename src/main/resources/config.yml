@@ -1,0 +1,92 @@
+# Stormcraft-Dungeons Configuration
+# Version: 0.1.0
+
+portals:
+  # How often to check for portal spawning (in ticks, 20 ticks = 1 second)
+  check_interval: 100  # 5 seconds
+
+  # Particle effects around portals
+  particles:
+    enabled: true
+    type: PORTAL
+    count: 20
+    radius: 2.0
+
+  # Auto-cleanup settings
+  remove_on_storm_end: true
+  remove_when_too_far: true
+  max_distance_from_storm: 300
+
+storms:
+  # Global storm requirements
+  check_interval: 60  # Check every 60 seconds
+  max_portals: 5      # Max portals active at once
+
+# Dungeon-specific configurations
+dungeons:
+  stormcore_depths:
+    enabled: true
+    display_name: "&b&lStormcore Depths"
+
+    # Entry requirements
+    requirements:
+      min_sel: 5
+      essence_cost: 500
+      min_storm_intensity: 40
+      max_distance_from_storm: 200
+      permission: "stormcraft.dungeons.stormcore"
+
+    # Rewards
+    rewards:
+      essence_base: 1500
+      essence_variance: 500  # 1000-2000 range
+      completion_bonus: 0.1  # 10% bonus for first completion
+
+    # Portal spawning
+    portal:
+      enabled: true
+      spawn_chance: 0.8  # 80% chance to spawn portal
+
+  tempest_labyrinth:
+    enabled: true
+    display_name: "&5&lTempest Labyrinth"
+
+    requirements:
+      min_sel: 15
+      essence_cost: 2000
+      min_storm_intensity: 60
+      max_distance_from_storm: 200
+      permission: "stormcraft.dungeons.labyrinth"
+      required_completions:
+        stormcore_depths: 3  # Must complete Stormcore 3 times
+
+    rewards:
+      essence_base: 6500
+      essence_variance: 1500
+      completion_bonus: 0.15
+
+    portal:
+      enabled: true
+      spawn_chance: 0.5
+
+  storm_sanctum:
+    enabled: true
+    display_name: "&c&l⚡ Storm Titan's Sanctum ⚡"
+
+    requirements:
+      min_sel: 25
+      essence_cost: 10000
+      min_storm_intensity: 90
+      max_distance_from_storm: 200
+      permission: "stormcraft.dungeons.sanctum"
+      required_completions:
+        tempest_labyrinth: 5
+
+    rewards:
+      essence_base: 35000
+      essence_variance: 15000
+      completion_bonus: 0.2
+
+    portal:
+      enabled: true
+      spawn_chance: 0.3  # Rare spawn

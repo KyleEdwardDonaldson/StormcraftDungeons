@@ -1,0 +1,49 @@
+name: Stormcraft-Dungeons
+version: ${project.version}
+main: dev.ked.stormcraft.dungeons.StormcraftDungeonsPlugin
+api-version: '1.21'
+author: Claude Code
+description: Bridge plugin connecting Stormcraft storms with MythicDungeons instanced content
+
+depend:
+  - Stormcraft
+  - MythicDungeons
+
+softdepend:
+  - Stormcraft-Essence
+  - Vault
+
+commands:
+  dungeon:
+    description: Main dungeon command
+    aliases: [dg, dungeons]
+    usage: /dungeon <list|stats|nearest|reload|clear>
+
+permissions:
+  stormcraft.dungeons.use:
+    description: Access to basic dungeon system
+    default: true
+  stormcraft.dungeons.stormcore:
+    description: Access to Stormcore Depths dungeon
+    default: true
+  stormcraft.dungeons.labyrinth:
+    description: Access to Tempest Labyrinth dungeon
+    default: true
+  stormcraft.dungeons.sanctum:
+    description: Access to Storm Titan's Sanctum dungeon
+    default: true
+  stormcraft.dungeons.admin:
+    description: Access to admin commands
+    default: op
+    children:
+      stormcraft.dungeons.reload: true
+      stormcraft.dungeons.clear: true
+  stormcraft.dungeons.reload:
+    description: Reload configuration
+    default: op
+  stormcraft.dungeons.clear:
+    description: Clear all portals
+    default: op
+  stormcraft.dungeons.bypass:
+    description: Bypass all entry requirements
+    default: op
