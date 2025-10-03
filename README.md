@@ -3,7 +3,7 @@
 > Bridge plugin connecting Stormcraft storms with MythicDungeons instanced content
 
 [![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)](https://github.com/stormcraft/stormcraft-dungeons)
-[![Minecraft](https://img.shields.io/badge/minecraft-1.21.3-brightgreen.svg)](https://papermc.io)
+[![Minecraft](https://img.shields.io/badge/minecraft-1.21.3--1.21.9-brightgreen.svg)](https://papermc.io)
 [![Java](https://img.shields.io/badge/java-21-orange.svg)](https://adoptium.net)
 
 ---
@@ -26,7 +26,7 @@
 ## 📋 Requirements
 
 ### Required Dependencies
-- **Paper** 1.21.3+ (or compatible fork)
+- **Paper** 1.21.3 - 1.21.9 (or compatible fork)
 - **Java** 21
 - **Stormcraft** 2.0.0+ (core storm system)
 - **MythicDungeons** 2.0.0+ (instanced dungeons)
